@@ -155,19 +155,19 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 bindsym $mod+X mode "$mode_system"
 bindsym control+mod1+Delete mode "$mode_system"
 
-#set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
-#mode "$mode_system" {
-    #bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-    #bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    #bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-    #bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
-    #bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-    #bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
+set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
+mode "$mode_system" {
+    bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
+    bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
+    bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
 
     # back to normal: Enter or Escape
-  #  bindsym Return mode "default"
- #   bindsym Escape mode "default"
-#}
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 
 
@@ -359,7 +359,7 @@ bindsym $mod+Return exec --no-startup-id termite;focus
 
 #pavucontrol
 #arcolinux conflict
-#bindsym control+mod1+u exec --no-startup-id pavucontrol
+bindsym control+mod1+u exec --no-startup-id pavucontrol
 
 # core
 bindsym $Mod+w          exec --no-startup-id exo-open --launch WebBrowser
@@ -368,8 +368,7 @@ bindsym $Mod+t          exec --no-startup-id exo-open --launch TerminalEmulator
 bindsym Control+Shift+t exec termite
 bindsym $Mod+g          exec google-chrome-stable
 bindsym $Mod+s          exec sudo porthole
-bindsym $Mod+a          exec firefox
-#bindsym $Mod+a
+
 
 
 
@@ -565,13 +564,13 @@ bar {
 
 colors {
         background #00000000
-        statusline #5e76f2
-        separator  #5e76f2
+        statusline #07edf8
+        separator  #07edf8
         #                     border  backgr. text
-        focused_workspace     #0F233E #5e76f2 #0F233E
+        focused_workspace     #0F233E #07edf8 #0F233E
         active_workspace      #a9a9a9 #b63ea2 #A22330
-        inactive_workspace    #5e76f2 #222222 #5e76f2
-        urgent_workspace      #5e76f2 #5e76f2 #FFFFFF
+        inactive_workspace    #07edf8 #222222 #07edf8
+        urgent_workspace      #07edf8 #07edf8 #FFFFFF
         }
 
     }
@@ -582,8 +581,8 @@ colors {
 # class                 border  backgr. text    indicator
 client.placeholder      #242424 #242424 #242424
 client.background       #242424 #242424 #242424
-client.focused          #b63ea2 #4A4A4A #CF2332 #9b5f9b #9b5f9b
-client.unfocused        #1164A7 #222222 #A22330 #5e76f2 #5e76f2
+client.focused          #b63ea2 #4A4A4A #CF2332 #07edf8 #07edf8
+client.unfocused        #1164A7 #222222 #A22330 #0c60ad #0c60ad
 client.focused_inactive #222222 #222222 #a9a9a9 #222222
 client.urgent           #b63ea2 #d42121 #f7f7f7 #d42121
 
@@ -706,11 +705,11 @@ client.urgent           #b63ea2 #d42121 #f7f7f7 #d42121
 exec_always compton -f
 
 #wallpaper
-exec_always feh --bg-scale ~/Pictures/b9.jpg
+exec_always feh --bg-scale ~/Pictures/b3.jpg
 
 # wifi
 exec --no-startup-id wpa_gui &
 
 #volume control
-exec --no-startup-id qasmixer &
+#RRRRRRRRexec --no-startup-id qasmixer &
 
